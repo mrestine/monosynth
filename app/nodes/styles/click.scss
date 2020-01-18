@@ -1,0 +1,10 @@
+.click-wrap {
+  vertical-align: top;
+  .click-inner {
+    display: flex;
+    vertical-align: top;
+    .click-toggle {
+      margin-top: 32px;
+    }
+  }  
+}

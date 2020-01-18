@@ -1,0 +1,11 @@
+.arp-wrap {
+  vertical-align: top;
+  .arp-inner {
+    display: inline-block;
+    vertical-align: top;
+    width: 64px;
+    .arp-toggle {
+      margin: 12px auto;
+    }
+  }  
+}

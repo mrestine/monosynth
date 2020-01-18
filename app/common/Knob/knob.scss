@@ -1,0 +1,69 @@
+.knob-container {
+  display: inline-block;
+  width: 50px;
+  margin: 8px;
+  .knob-label {
+    font-size: 12px;
+    text-decoration: underline;
+    text-align: center;
+  }
+  .knob-outer {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    user-select: none;
+    position: relative;
+    .knob {
+      box-sizing: border-box;
+      width: 42px;
+      height: 42px;
+      border-radius: 21px;
+      border: 6px solid #444;
+      background: #777;
+      margin: 2px auto 0 auto;
+    }
+    .knob::before {
+      font-family: "Times New Roman";
+      font-weight: bold;
+      color: #333;
+      font-size: 11px;
+      content: "|";
+      margin-left: 14px;
+    }
+    .min {
+      transform: rotate(-135deg) translate(0, -22px)
+    }
+    .max {
+      transform: rotate(135deg) translate(0, -22px);
+    }
+    .tick {
+      border: 0.5px solid #333;
+      height: 6px;
+      width: 0px;
+      position: absolute;
+      top: 17px;
+      left: calc(50% - 0.5px);
+      transform-origin: 50% 100%;
+    }
+    .tick-line {
+      border: 1px solid;
+      border-color: #888 #888 transparent #888;
+      width: 44px;
+      height: 44px;
+      position: absolute;
+      top: 0;
+      left: 2px;
+      border-radius: 22px;
+
+    }
+    .value {
+      /*background: #111;
+      color: #00B8DB;
+      width: 48px;
+      padding: 2px 0;
+      font-family: segment14;*/
+      font-size: 11px;
+      text-align: center;
+    }
+  }
+}

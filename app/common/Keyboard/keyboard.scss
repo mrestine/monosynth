@@ -1,0 +1,101 @@
+.keyboard {
+  position: relative;
+  .inline-block {
+    display: inline-block;
+  }
+
+  .midi-btn-wrap {
+    position: absolute;
+    top: 12px;
+    right: 8px;
+  }
+
+  .key {
+    height: 32px;
+    width: 32px;
+    border-radius: 6px;
+    text-align: right;
+    display: inline-block;
+    padding-right: 4px;
+    box-sizing: border-box;
+    position: relative;
+    span {
+      position: absolute;
+      color: #333;
+    }
+  }
+
+  .key.erase {
+    background: #ddb;
+    border: 1px solid #886;
+    color: #886;
+    margin-left: 44px;
+    span {
+      right: 40px;
+    }
+  }
+  .key.erase.pressed {
+    background: #ffc;
+  }
+
+  .key.record {
+    background: #d66;
+    border: 1px solid #833;
+    color: #833;
+    margin-left: 8px;
+    span {
+      left: 40px;
+    }
+  }
+  .key.record.pressed {
+    background: #f88;
+  }
+
+  .key.play {
+    background: #6d6;
+    border: 1px solid #383;
+    color: #383;
+    margin-left: 208px;
+    span {
+      right: 40px;
+    }
+  }
+  .key.play.pressed {
+    background: #8f8;
+  }
+
+  .key.white {
+    background: #eee;
+    color: #333;
+    margin: 8px 8px 0 0;
+    border: 1px solid #333;
+  }
+  .key.white.pressed {
+    background: #ccc;
+  }
+
+  .key.black {
+    background: #556;
+    color: #eee;
+    border: 1px solid #333;
+    margin-top: 8px;
+  }
+  .key.black.pressed {
+    background: #778;
+  }
+
+  .shift-block {
+    vertical-align: bottom;
+  }
+  .shift-block:first-of-type {
+    margin-right: 8px;
+  }
+  .key.shift {
+    width: 84px;
+    background: #eee;
+    border: 1px solid #333;
+    color: #333;
+    text-align: center;
+    vertical-align: middle;
+  }
+}

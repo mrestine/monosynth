@@ -1,0 +1,34 @@
+@font-face {
+    font-family: segment14;
+    src: url(./seg14.woff2);
+    font-style: italic;
+}
+
+html, body {
+  background: #99999f;
+  font-family: monospace;
+  color: #111;
+  .title {
+    font-size: 22px;
+    text-align: center;
+    .subtitle {
+      font-size: 12px;
+    }
+    a {
+      color: #005566;
+    }
+  }
+  #container {
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    #synth {
+      display: inline-flex;
+      flex-direction: column;
+      .row {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
