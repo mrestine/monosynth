@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { initializeMidi } from '../../utils/midi';
+import { initializeMidi, disconnectMidi } from '../../utils/midi';
 
 class MidiButton extends Component {
     constructor () {
@@ -8,12 +8,18 @@ class MidiButton extends Component {
     }
 
     handleConnectClick() {
-        this.setState({ connecting: true });
-        initializeMidi(() => {
-            this.setState({ connected: true, connecting: false });
-        }, () => {
-            this.setState({ connected: false, connecting: false });
-        });
+        if (this.state.connected) {
+            disconnectMidi(() => {
+                this.setState({ connected: false });
+            })
+        } else {
+            this.setState({ connecting: true });
+            initializeMidi(() => {
+                this.setState({ connected: true, connecting: false });
+            }, () => {
+                this.setState({ connected: false, connecting: false });
+            });
+        }
     }
 
     render () {

@@ -29,13 +29,25 @@ const init = (connected, disconnected) => {
     }, disconnected);
 };
 
+const disconnectMidi = cb => {
+    if (device && device.close && typeof device.close === 'function') {
+        device.close();
+    }
+    if (typeof cb === 'function') cb();
+};
+
 const onMidi = message => {
     const key = message.data[1];
     const ev = { timeStamp: window.performance.now(), key, midi: true };
     switch (message.data[0]) {
         case 144:
-            if (isLive()) recordEvent('down', ev);
-            handleKeyDown(key);
+            if (message.data[2] === 0) { // velocity 0 is keyup for some keyboards, apparently.
+                if (isLive()) recordEvent('up', ev);
+                handleKeyUp(key);
+            } else {
+                if (isLive()) recordEvent('down', ev);
+                handleKeyDown(key);
+            }
             break;
         case 128:
             if (isLive()) recordEvent('up', ev);
@@ -85,5 +97,6 @@ const failure = () => {
 }
 
 exports.initializeMidi = init;
+exports.disconnectMidi = disconnectMidi;
 exports.handleMidiKeyDown = handleKeyDown;
 exports.handleMidiKeyUp = handleKeyUp;
