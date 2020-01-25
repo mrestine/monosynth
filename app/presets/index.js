@@ -20,6 +20,7 @@ import * as Tape from './tape';
 import * as TriBass from './tribass';
 import * as UFO from './ufo';
 import * as Shift from './shift';
+import * as Xtina from './xtina';
 
 export default [
   { ...Default },
@@ -44,4 +45,5 @@ export default [
   { ...Tape },
   { ...TriBass },
   { ...UFO },
+  { ...Xtina },
 ];
