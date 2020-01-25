@@ -95,7 +95,7 @@ const setArpeggiator = (newSettings) => {
         }
         on = newSettings.on;
     }
-    if (typeof newSettings.time !== 'undefined' && time != time) {
+    if (typeof newSettings.time !== 'undefined' && newSettings.time != time) {
         if (on) {
             stopArpeggio();
             startArpeggio();
