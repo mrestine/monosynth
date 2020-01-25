@@ -26,7 +26,7 @@ class Glide extends Component {
   render () {
     const { glide } = this.state;
     return <FieldSet legend="glide">
-      <Knob label="exp" min={0} max={2} step={0.01} value={glide} onChange={this.handleGlideChange.bind(this)} />
+      <Knob label="exp"  min={0} max={1} step={0.001} displayFix={3} value={glide} onChange={this.handleGlideChange.bind(this)} />
     </FieldSet>;
   }
 }

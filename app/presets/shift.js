@@ -13,7 +13,7 @@ export const values = {
   filter: { type: 'lowpass', frequency: 10, Q: 1, target: 3140, time: 0 },
   arpeggiator: { on: false, direction: 'up', time: 0.1, octave: 0 },
   envelope: { attack: 0, decay: 0, sustain: 1, release: 0.62 },
-  glide: { glide: 5 },
+  glide: { glide: 1 },
   noise: { gain: 0.06 },
   master: { gain: 1 },
   chorus: { delay: 100, depth: 100, speed: 0.5 },
