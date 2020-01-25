@@ -4,21 +4,22 @@ import { initializeMidi } from '../../utils/midi';
 class MidiButton extends Component {
     constructor () {
         super();
-        this.state = { connected: false };
+        this.state = { connected: false, connecting: false };
     }
 
     handleConnectClick() {
+        this.setState({ connecting: true });
         initializeMidi(() => {
-            this.setState({ connected: true });
+            this.setState({ connected: true, connecting: false });
         }, () => {
-            this.setState({ connected: false });
+            this.setState({ connected: false, connecting: false });
         });
     }
 
     render () {
-        const { connected } = this.state;
-        return <button disabled={connected} onClick={this.handleConnectClick.bind(this)}>
-            {connected ? 'connected' : 'connect midi'}
+        const { connected, connecting } = this.state;
+        return <button disabled={connecting} onClick={this.handleConnectClick.bind(this)}>
+            {connected ? 'disconnect' : 'connect midi'}
         </button>;
     }
 }
