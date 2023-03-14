@@ -53,7 +53,7 @@ class Synth extends Component {
     return <div id="root-wrap">
       <div className="title">
         monophonic synthesizer
-        <div className="subtitle">using the web audio api and react by <a target="_blank" href="http://mattrestine.com">matt restine</a></div>
+        <div className="subtitle">using the web audio api and react by <a target="_blank" href="https://linkedin.com/in/mrestine/">matt restine</a></div>
       </div>
       {initialized ? <div id="container">
         <div id="synth">
