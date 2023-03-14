@@ -9,7 +9,7 @@ module.exports = {
   devtool: 'inline-source-map',
   mode: 'none',
   devServer: {
-    contentBase: './dist',
+    contentBase: './build',
     hot: true,
   },
   module: {
@@ -38,7 +38,7 @@ module.exports = {
     }]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['build']),
     new HtmlWebpackPlugin({ 
       title: 'Web Synth',
       template: path.resolve(__dirname, 'index.html'), 
@@ -47,6 +47,6 @@ module.exports = {
   ],
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
   }
 };
